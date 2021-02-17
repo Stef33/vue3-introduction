@@ -8,5 +8,24 @@
 </head>
 <body>
   <h1>Hello vue :)</h1>
+
+  <div id="app">
+    <div v-if="showBooks">
+      <p>{{ title }} - {{ author }} - {{ age }}</p>
+    </div>
+
+    <button v-on:click="age++">Increase age</button>
+    <button v-on:click="age--">Decrease age</button>
+    <div @click="changeTitle('Moment of Truth')">Change book title</div>
+
+    <button @click="toggleShowBooks">
+      <span v-if="showBooks">Hide Books</span>
+      <span v-else>Show Books</span>
+    </button>
+
+    <div v-show="showBooks">currently showing books</div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
